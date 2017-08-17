@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'jwtcli'
+require 'clipboard'
+
+payload = Jwtcli::Cli.new.get_opts
+
+begin
+  Clipboard.copy Jwtcli::Gen.new(payload).encode
+  puts 'The JWT has been copied to your clipboard!'
+  exit
+rescue ArgumentError => e
+  abort("Error: #{e.message}")
+end

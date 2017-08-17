@@ -1,5 +1,3 @@
 require "jwtcli/version"
-
-module Jwtcli
-  # Your code goes here...
-end
+require "jwtcli/cli"
+require "jwtcli/gen"
