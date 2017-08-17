@@ -41,6 +41,9 @@ class GenTest < Minitest::Test
     assert_raises ArgumentError do
       Gen.new({user_id: "123", email: "something"})
     end
+    assert_raises ArgumentError do
+      Gen.new({user_id: "123", email: "v@gt"})
+    end
   end
 
   def test_encode
