@@ -24,6 +24,7 @@ module Jwtcli
         if opts["user_id"] && opts["email"]
           additional = prompt.yes?("Any additional inputs?(yes/no)")
           if !additional
+            opts = opts.inject({}) { |m,(k,v)| acc[k.to_sym] = v; m }
             return opts
           end
         end
